@@ -68,7 +68,6 @@
             <img src="intereses.png" alt="Perfil de intereses O*NET">
         </div>
 
-    
     <div class="container">
         <h1>Clase (18-10-2024)</h1>
         <h1>Lógica - Tablas de Verdad</h1>
@@ -103,11 +102,77 @@
             <img src="LLuvias.png" alt="Diagrama del sistema experto de lluvias">
         </div>
 
-        <!-- Actividad Parcial -->
+        <!-- Sección Actividad del Parcial -->
         <div class="section">
             <h2>Actividad del Parcial</h2>
             <p>En la actividad del parcial, se desarrolló un código en Python utilizando la librería <code>itertools</code> para realizar operaciones iterativas avanzadas. El código implementaba clases para representar oraciones lógicas, como <code>Symbol</code> para símbolos individuales, <code>And</code> para conjunciones, <code>Not</code> para negaciones, y otras como <code>Or</code>, <code>Implication</code> y <code>Biconditional</code>. Cada clase incluía métodos como <code>evaluate</code> para evaluar las expresiones lógicas basadas en un modelo dado.</p>
             <p>Además, se definió un método <code>model_check</code> para verificar si una base de conocimiento lógica implica una consulta dada, utilizando un algoritmo de evaluación exhaustiva para revisar todos los posibles valores de verdad de los símbolos involucrados.</p>
+            
+            <!-- Código comentado del parcial -->
+            <p>El código comenzaba con la importación de la librería:</p>
+            <pre>
+import itertools  # Importa la librería itertools para operaciones iterativas avanzadas.
+            </pre>
+            <p>A continuación, se definía una clase base llamada <code>Sentence</code>:</p>
+            <pre>
+class Sentence():
+    """
+    Clase base para representar una oración lógica.
+    """
+    def evaluate(self, model):
+        raise Exception("nada que evaluar")  # Esta excepción se lanza si el método no es implementado.
+
+    def formula(self):
+        return ""  # Devuelve una representación de la fórmula lógica en forma de cadena de texto.
+
+    def symbols(self):
+        return set()  # Devuelve un conjunto vacío, se espera que subclases lo implementen.
+
+    @classmethod
+    def validate(cls, sentence):
+        if not isinstance(sentence, Sentence):  
+            raise TypeError("debe ser una oración lógica")  # Lanza un error si no lo es.
+
+    @classmethod
+    def parenthesize(cls, s):
+        def balanced(s):
+            count = 0  # Inicia un contador.
+            for c in s:
+                if c == "(":
+                    count += 1
+                elif c == ")":
+                    if count <= 0:
+                        return False
+                    count -= 1
+            return count == 0  # Verifica si la cadena tiene paréntesis balanceados.
+
+        if not len(s) or s.isalpha() or (s[0] == "(" and s[-1] == ")" and balanced(s[1:-1])):
+            return s
+        else:
+            return f"({s})"  # Rodea con paréntesis si no están presentes.
+            </pre>
+            
+            <!-- Código adicional -->
+            <p>El código seguía con la definición de otras clases como <code>Symbol</code>, <code>And</code>, y más:</p>
+            <pre>
+class Symbol(Sentence):
+    def __init__(self, name):
+        self.name = name  # Define el nombre del símbolo.
+
+    def evaluate(self, model):
+        try:
+            return bool(model[self.name])  # Evalúa el valor del símbolo en el modelo.
+        except KeyError:
+            raise EvaluationException(f"variable {self.name} no está en el modelo")
+
+    def formula(self):
+        return self.name  # Devuelve el nombre del símbolo como fórmula.
+
+    def symbols(self):
+        return {self.name}  # Devuelve el conjunto que contiene solo este símbolo.
+            </pre>
+
+            <p>Finalmente, otras clases como <code>Not</code> y <code>And</code> extendían la funcionalidad para permitir la evaluación de expresiones lógicas más complejas.</p>
         </div>
     </div>
 
@@ -116,4 +181,5 @@
     </footer>
 </body>
 </html>
+
 
