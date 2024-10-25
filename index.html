@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -39,6 +39,8 @@
             font-size: 2em;
             margin-top: 30px;
             color: #3498db;
+            border-bottom: 2px solid #3498db; /* Línea inferior */
+            padding-bottom: 10px; /* Espacio debajo del título */
         }
 
         img {
@@ -58,63 +60,80 @@
             font-size: 0.9em;
             color: #555;
         }
+
+        pre {
+            background-color: #f9f9f9; /* Fondo para el código */
+            border-left: 5px solid #3498db; /* Línea izquierda azul */
+            padding: 10px; /* Espaciado interno */
+            overflow-x: auto; /* Desplazamiento horizontal si es necesario */
+            border-radius: 5px; /* Esquinas redondeadas */
+            font-family: 'Courier New', Courier, monospace; /* Fuente de tipo monoespaciada */
+            color: #2c3e50; /* Color del texto */
+        }
+
+        code {
+            background-color: #e8f0fe; /* Fondo para el código en línea */
+            padding: 2px 4px; /* Espaciado interno */
+            border-radius: 4px; /* Esquinas redondeadas */
+            color: #c7254e; /* Color del texto */
+        }
     </style>
 </head>
 <body>
 <h1>Clase (11-10-2024)</h1>
-    <h1>Perfil de intereses O*NET</h1>
-     <div class="section">
-            <h2></h2>
-            <img src="intereses.png" alt="Perfil de intereses O*NET">
-        </div>
+<h1>Perfil de intereses O*NET</h1>
+<div class="section">
+    <h2></h2>
+    <img src="intereses.png" alt="Perfil de intereses O*NET">
+</div>
 
-    <div class="container">
-        <h1>Clase (18-10-2024)</h1>
-        <h1>Lógica - Tablas de Verdad</h1>
+<div class="container">
+    <h1>Clase (18-10-2024)</h1>
+    <h1>Lógica - Tablas de Verdad</h1>
 
-        <!-- Sección Compuesta Y -->
-        <div class="section">
-            <h2>Compuesta Y (AND)</h2>
-            <img src="AND3.png" alt="Tabla de verdad para la operación lógica AND">
-        </div>
+    <!-- Sección Compuesta Y -->
+    <div class="section">
+        <h2>Compuesta Y (AND)</h2>
+        <img src="AND3.png" alt="Tabla de verdad para la operación lógica AND">
+    </div>
 
-        <!-- Sección Compuesta NOT -->
-        <div class="section">
-            <h2>Compuesta NOT</h2>
-            <img src="NOT2.png" alt="Tabla de verdad para la operación lógica NOT">
-        </div>
+    <!-- Sección Compuesta NOT -->
+    <div class="section">
+        <h2>Compuesta NOT</h2>
+        <img src="NOT2.png" alt="Tabla de verdad para la operación lógica NOT">
+    </div>
 
-        <!-- Sección Compuesta OR -->
-        <div class="section">
-            <h2>Compuesta OR</h2>
-            <img src="OR1.png" alt="Tabla de verdad para la operación lógica OR">
-        </div>
+    <!-- Sección Compuesta OR -->
+    <div class="section">
+        <h2>Compuesta OR</h2>
+        <img src="OR1.png" alt="Tabla de verdad para la operación lógica OR">
+    </div>
 
-        <!-- Sección Implication -->
-        <div class="section">
-            <h2>Implication</h2>
-            <img src="Implication.png" alt="Tabla de verdad para la implicación lógica">
-        </div>
+    <!-- Sección Implication -->
+    <div class="section">
+        <h2>Implication</h2>
+        <img src="Implication.png" alt="Tabla de verdad para la implicación lógica">
+    </div>
 
-        <!-- Sección Sistema Experto de Lluvias -->
-        <div class="section">
-            <h2>Sistema Experto de Lluvias</h2>
-            <img src="LLuvias.png" alt="Diagrama del sistema experto de lluvias">
-        </div>
+    <!-- Sección Sistema Experto de Lluvias -->
+    <div class="section">
+        <h2>Sistema Experto de Lluvias</h2>
+        <img src="LLuvias.png" alt="Diagrama del sistema experto de lluvias">
+    </div>
 
-        <!-- Sección Actividad del Parcial -->
-        <div class="section">
-            <h2>Actividad del Parcial</h2>
-            <p>En la actividad del parcial, se desarrolló un código en Python utilizando la librería <code>itertools</code> para realizar operaciones iterativas avanzadas. El código implementaba clases para representar oraciones lógicas, como <code>Symbol</code> para símbolos individuales, <code>And</code> para conjunciones, <code>Not</code> para negaciones, y otras como <code>Or</code>, <code>Implication</code> y <code>Biconditional</code>. Cada clase incluía métodos como <code>evaluate</code> para evaluar las expresiones lógicas basadas en un modelo dado.</p>
-            <p>Además, se definió un método <code>model_check</code> para verificar si una base de conocimiento lógica implica una consulta dada, utilizando un algoritmo de evaluación exhaustiva para revisar todos los posibles valores de verdad de los símbolos involucrados.</p>
-            
-            <!-- Código comentado del parcial -->
-            <p>El código comenzaba con la importación de la librería:</p>
-            <pre>
+    <!-- Sección Actividad del Parcial -->
+    <div class="section">
+        <h2>Actividad del Parcial</h2>
+        <p>En la actividad del parcial, se desarrolló un código en Python utilizando la librería <code>itertools</code> para realizar operaciones iterativas avanzadas. El código implementaba clases para representar oraciones lógicas, como <code>Symbol</code> para símbolos individuales, <code>And</code> para conjunciones, <code>Not</code> para negaciones, y otras como <code>Or</code>, <code>Implication</code> y <code>Biconditional</code>. Cada clase incluía métodos como <code>evaluate</code> para evaluar las expresiones lógicas basadas en un modelo dado.</p>
+        <p>Además, se definió un método <code>model_check</code> para verificar si una base de conocimiento lógica implica una consulta dada, utilizando un algoritmo de evaluación exhaustiva para revisar todos los posibles valores de verdad de los símbolos involucrados.</p>
+        
+        <!-- Código comentado del parcial -->
+        <p>El código comenzaba con la importación de la librería:</p>
+        <pre>
 import itertools  # Importa la librería itertools para operaciones iterativas avanzadas.
-            </pre>
-            <p>A continuación, se definía una clase base llamada <code>Sentence</code>:</p>
-            <pre>
+        </pre>
+        <p>A continuación, se definía una clase base llamada <code>Sentence</code>:</p>
+        <pre>
 class Sentence():
     """
     Clase base para representar una oración lógica.
@@ -150,11 +169,11 @@ class Sentence():
             return s
         else:
             return f"({s})"  # Rodea con paréntesis si no están presentes.
-            </pre>
-            
-            <!-- Código adicional -->
-            <p>El código seguía con la definición de otras clases como <code>Symbol</code>, <code>And</code>, y más:</p>
-            <pre>
+        </pre>
+        
+        <!-- Código adicional -->
+        <p>El código seguía con la definición de otras clases como <code>Symbol</code>, <code>And</code>, y más:</p>
+        <pre>
 class Symbol(Sentence):
     def __init__(self, name):
         self.name = name  # Define el nombre del símbolo.
@@ -170,16 +189,14 @@ class Symbol(Sentence):
 
     def symbols(self):
         return {self.name}  # Devuelve el conjunto que contiene solo este símbolo.
-            </pre>
+        </pre>
 
-            <p>Finalmente, otras clases como <code>Not</code> y <code>And</code> extendían la funcionalidad para permitir la evaluación de expresiones lógicas más complejas.</p>
-        </div>
+        <p>Finalmente, otras clases como <code>Not</code> y <code>And</code> extendían la funcionalidad para permitir la evaluación de expresiones lógicas más complejas.</p>
     </div>
+</div>
 
-    <footer>
-        &copy; 2024 Curso Inteligencia Artificial
-    </footer>
+<footer>
+    &copy; 2024 Curso Inteligencia Artificial
+</footer>
 </body>
 </html>
-
-
